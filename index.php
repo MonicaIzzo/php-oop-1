@@ -23,6 +23,17 @@ Buon Lavoro e sprattutto buon weekend!
 
 -->
 
+<?php
+include __DIR__ . '/Models/Movie.php';
+$film1 = new Movie(1, 'Matrix', 'Azione, Fantascienza, Avventura, Cinema Fantastico');
+$film2 = new Movie(2, ' Matrix Reloaded', 'Azione, Fantascienza, Cyberpunk, Avventura, Thiller, Fantascienza apocalittica e post apocalittica');
+$film3 = new Movie(3, 'Matrix Revolutions', 'Azione, Fantascienza, Cyberpunk, Avventura, Arti Marziali, Azione-avventura, Thiller, Fantascienza apocalittica e post apocalittica');
+$film4 = new Movie(4, 'Matrix Resurrections', 'Azione, Fantascienza');
+
+
+$movies = [$film1, $film2, $film3, $film4];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,6 +55,17 @@ Buon Lavoro e sprattutto buon weekend!
 
 <body>
     <div class="container">
+        <section>
+            <h2>Film</h2>
+            <ul>
+                <? foreach ($movies as $movie) : ?>
+                    <li>
+                        <h2><?= $movie->title ?></h2>
+                        <small><em><?= $movie->genre ?></em></small>
+                    </li>
+                <? endforeach; ?>
+            </ul>
+        </section>
     </div>
 </body>
 
