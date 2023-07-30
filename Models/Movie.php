@@ -5,24 +5,24 @@ class Movie
     public $id;
     public $title;
     public $register;
+    public $genre;
     public $year;
     public $village;
     public $duration;
     public $distribution;
-    public $genre;
     public $description;
 
 
-    public function __construct(int $id, string $title, string $register, int $year, string $village, string $duration, string $distribution, string $genre, string $description)
+    public function __construct($id, $title, $register, $genre, $year, $village, $duration, $distribution, $description)
     {
         $this->id = $id;
         $this->title = $title;
-        $this->genre = $register;
-        $this->genre = $year;
-        $this->genre = $village;
-        $this->genre = $duration;
-        $this->genre = $distribution;
+        $this->register = $register;
         $this->genre = $genre;
-        $this->genre = $description;
+        $this->year = $year;
+        $this->village = $village;
+        $this->duration = $duration;
+        $this->distribution = $distribution;
+        $this->description = $description;
     }
 };
