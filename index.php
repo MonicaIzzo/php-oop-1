@@ -24,34 +24,44 @@ Buon Lavoro e sprattutto buon weekend!
 -->
 
 <?php
-include __DIR__ . '/Models/Movie.php';
-include __DIR__ . '/Models/Actor.php';
+include_once __DIR__ . '/Models/Movie.php';
+include_once __DIR__ . '/Models/Actor.php';
 
 
-$film1 = new Movie(1, 'Matrix', 'Lana Wachowski, Lilly Wachowski', 'Azione, Fantascienza, Avventura, Cinema Fantastico', '1998', 'USA', '136 min', 'Warner Bros', 'Matrix è un film di genere azione, fantascienza del 1999, diretto da Lana Wachowski, Lilly Wachowski, con Keanu Reeves e Laurence Fishburne. Uscita al cinema il 07 maggio 1999. Durata 136 minuti. Warner Bros.',);
+//ATTORI
 
-$film2 = new Movie(2, ' Matrix Reloaded', 'Lana Wachowski, Lilly Wachowski', 'Azione, Fantascienza, Cyberpunk, Avventura, Thiller, Fantascienza apocalittica e post apocalittica', '2003', 'USA', '137 min', 'Warner Bros.', 'Matrix Reloaded è un film di genere fantascienza, azione del 2003, diretto da Lana Wachowski, Lilly Wachowski, con Keanu Reeves e Laurence Fishburne. Uscita al cinema il 23 maggio 2003. Durata 137 minuti. Distribuito da Warner Bros.',);
-
-$film3 = new Movie(3, 'Matrix Revolutions', 'Lana Wachowski, Lilly Wachowski', 'Azione, Fantascienza, Cyberpunk, Avventura, Arti Marziali, Azione-avventura, Thiller, Fantascienza apocalittica e post apocalittica',  '2023', 'USA', '138 min', 'Warner Bros', 'Matrix Revolutions è un film di genere azione, fantascienza del 2003, diretto da Lana Wachowski, Lilly Wachowski, con Keanu Reeves e Laurence Fishburne. Uscita al cinema il 05 novembre 2003. Durata 138 minuti. Distribuito da Warner Bros.',);
-$film4 = new Movie(4, 'Matrix Resurrections', 'Lana Wachowski', 'Azione, Fantascienza', '2021', 'USA', 'Warner Bros. Pictures', '148 min', 'Matrix Resurrections è un film di genere azione, fantascienza del 2021, diretto da Lana Wachowski, con Keanu Reeves e Carrie-Anne Moss. Uscita al cinema il 01 gennaio 2022. Durata 148 minuti. Distribuito da Warner Bros. Pictures. ',);
-
-$movies = [$film1, $film2, $film3, $film4];
-
-$actor1 = new Actor(1, 'Keanu', 'Reeves', 'NEO',);
-$actor2 = new Actor(2, 'Laurence', 'Fishburne', 'MORPHEUS',);
-$actor3 = new Actor(3, 'Carrie-Anne', 'Moss', 'TRINITY',);
-$actor4 = new Actor(4, 'Hugo', 'Weaving', 'AGENTE SMITH',);
+$actor1 = new Actor(1, 'Keanu', 'Reeves');
+$actor2 = new Actor(2, 'Laurence', 'Fishburne');
+$actor3 = new Actor(3, 'Carrie-Anne', 'Moss');
+$actor4 = new Actor(4, 'Hugo', 'Weaving');
 
 // reloaded
-$actor5 = new Actor(5, 'Monica', 'Bellucci', 'PERSEPHONE',);
-$actor6 = new Actor(6, 'Lambert', 'Wilson', 'MEROVINGIO',);
-
+$actor5 = new Actor(5, 'Monica', 'Bellucci');
+$actor6 = new Actor(6, 'Lambert', 'Wilson',);
 
 // revolution
 
 //resurrection
-$actor7 = new Actor(7, 'Neil', 'Patrick Harris', 'ANALISTA',);
-$actor8 = new Actor(8, 'Cristina', 'Ricci', 'GWYN VERE',)
+$actor7 = new Actor(7, 'Neil', 'Patrick Harris');
+$actor8 = new Actor(8, 'Cristina', 'Ricci');
+
+
+$film1 = new Movie(1, 'Matrix', 'Lana Wachowski, Lilly Wachowski', 'Azione, Fantascienza, Avventura, Cinema Fantastico', '1998', 'USA', '136 min', 'Warner Bros', 'Matrix è un film di genere azione, fantascienza del 1999, diretto da Lana Wachowski, Lilly Wachowski, con Keanu Reeves e Laurence Fishburne. Uscita al cinema il 07 maggio 1999. Durata 136 minuti. Warner Bros.');
+
+$film2 = new Movie(2, ' Matrix Reloaded', 'Lana Wachowski, Lilly Wachowski', 'Azione, Fantascienza, Cyberpunk, Avventura, Thiller, Fantascienza apocalittica e post apocalittica', '2003', 'USA', '137 min', 'Warner Bros.', 'Matrix Reloaded è un film di genere fantascienza, azione del 2003, diretto da Lana Wachowski, Lilly Wachowski, con Keanu Reeves e Laurence Fishburne. Uscita al cinema il 23 maggio 2003. Durata 137 minuti. Distribuito da Warner Bros.');
+
+$film3 = new Movie(3, 'Matrix Revolutions', 'Lana Wachowski, Lilly Wachowski', 'Azione, Fantascienza, Cyberpunk, Avventura, Arti Marziali, Azione-avventura, Thiller, Fantascienza apocalittica e post apocalittica',  '2023', 'USA', '138 min', 'Warner Bros', 'Matrix Revolutions è un film di genere azione, fantascienza del 2003, diretto da Lana Wachowski, Lilly Wachowski, con Keanu Reeves e Laurence Fishburne. Uscita al cinema il 05 novembre 2003. Durata 138 minuti. Distribuito da Warner Bros.');
+$film4 = new Movie(4, 'Matrix Resurrections', 'Lana Wachowski', 'Azione, Fantascienza', '2021', 'USA', 'Warner Bros. Pictures', '148 min', 'Matrix Resurrections è un film di genere azione, fantascienza del 2021, diretto da Lana Wachowski, con Keanu Reeves e Carrie-Anne Moss. Uscita al cinema il 01 gennaio 2022. Durata 148 minuti. Distribuito da Warner Bros. Pictures. ');
+
+
+
+$film1->addActor($actor1, 'NEO',  $actor2, 'MORPHEUS', $actor3, 'TRINITY', $actor4, 'AGENTE SMITH');
+$film2->addActor($actor1, 'NEO',  $actor2, 'MORPHEUS', $actor3, 'TRINITY', $actor4, 'AGENTE SMITH', $actor5, 'PERSEPHONE');
+$film3->addActor($actor1, 'NEO',  $actor2, 'MORPHEUS', $actor3, 'TRINITY', $actor4, 'AGENTE SMITH', $actor5, 'PERSEPHONE');
+$film4->addActor($actor1, 'NEO',  $actor2, 'MORPHEUS', $actor3, 'TRINITY', $actor4, 'AGENTE SMITH', $actor5, 'PERSEPHONE', $actor6, 'MEROVINGIO', $actor7, 'ANALISTA', $actor8, 'GWYN VERE');
+
+$movies = [$film1, $film2, $film3, $film4];
+
 
 ?>
 
@@ -83,15 +93,17 @@ $actor8 = new Actor(8, 'Cristina', 'Ricci', 'GWYN VERE',)
                 <ul class="list-group">
                     <?php foreach ($movies as $movie) : ?>
                         <li class="list-group-item rounded-0 p-5">
-
                             <h3 class="mb-3"><?= $movie->title ?></h3>
                             <div><small>Registra: <strong><?= $movie->register ?></strong></small></div>
                             <div><small>anno di uscita: <strong><?= $movie->year ?></strong></small></div>
-                            <div><small>Paese: <strong><?= $movie->village ?></small></strong></div>
-                            <div><small>Durata: <strong><?= $movie->duration ?></small></strong></div>
+                            <div><small>Paese: <strong><?= $movie->village ?></strong></small></div>
+                            <div><small>Durata: <strong><?= $movie->duration ?></strong></small></div>
                             <div><small>Distribuito: <strong><?= $movie->distribution ?></strong></small></div>
-                            <div><small>Genere: <strong><?= $movie->genre ?></small></strong></div>
+                            <div><small>Genere: <strong><?= $movie->genre  ?></strong></small></div>
                             <p class="mt-3 bg-light p-2"><?= $movie->description ?></p>
+                            <!-- CAST -->
+                            <h3 class="mb-3">CAST:</h3>
+                            <div><strong><?= $movie->getCastNames(); ?></strong></div>
                         </li>
                     <?php endforeach; ?>
                 </ul>

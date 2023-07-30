@@ -1,5 +1,7 @@
 <?php
 
+include_once __DIR__ . '/Actor.php';
+
 class Movie
 {
     public $id;
@@ -11,6 +13,7 @@ class Movie
     public $duration;
     public $distribution;
     public $description;
+    public $cast;
 
 
     public function __construct($id, $title, $register, $genre, $year, $village, $duration, $distribution, $description)
@@ -25,4 +28,32 @@ class Movie
         $this->distribution = $distribution;
         $this->description = $description;
     }
-};
+
+
+
+    public function addActor(Actor $actor, string $role)
+    {
+        if ($actor instanceof Actor) {
+            $this->cast[$role] = $actor;
+        }
+    }
+
+    public function getCast()
+    {
+        return $this->cast;
+    }
+
+
+    public function getCastNames()
+    {
+        if ($this->cast) {
+            $names = '';
+
+            foreach ($this->cast as $role => $actor) {
+                $names .= $role . ': ' . $actor->getFullName() . ',';
+            }
+            return substr($names, 0, -2);
+        }
+        return 'N.D.';
+    }
+}
